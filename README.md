@@ -4,7 +4,7 @@
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I3I6AFVAP)
 
 
-A lightweight Discord music bot that streams a single audio source to a voice channel 24/7. Built with [linkdave](https://github.com/shi-gg/linkdave), a lightweight lavalink rewrite.
+A lightweight Discord music radio bot that streams a single audio source to a voice channel 24/7. Built with [linkdave](https://github.com/shi-gg/linkdave), a lightweight lavalink rewrite.
 
 If you need help using this, join **[our Discord Server](https://discord.com/invite/yYd6YKHQZH)**.
 
@@ -31,8 +31,8 @@ The easiest way to deploy the bot is using Docker Compose. This will start both 
 
 1.  **Clone the repository:**
     ```bash
-    mkdir music-bot
-    cd music-bot
+    mkdir radio-bot
+    cd radio-bot
     ```
 
 2.  **Set up your environment variables:**
@@ -42,15 +42,15 @@ The easiest way to deploy the bot is using Docker Compose. This will start both 
     ```yml
     services:
         bot:
-            container_name: music-bot
-            image: ghcr.io/shi-gg/music-bot
+            container_name: radio-bot
+            image: ghcr.io/shi-gg/radio-bot
             restart: unless-stopped
             env_file: .env
             depends_on:
                 - linkdave
         linkdave:
             image: ghcr.io/shi-gg/linkdave:0.1.2
-            container_name: music-linkdave
+            container_name: radio-linkdave
             restart: unless-stopped
             ports:
                 - "18080:8080"

@@ -1,7 +1,7 @@
 services:
     bot:
-        container_name: music-bot
-        image: music-bot
+        container_name: radio-bot
+        image: radio-bot
         build:
             context: .
             dockerfile: Dockerfile
@@ -16,7 +16,7 @@ services:
             - linkdave
     linkdave:
         image: ghcr.io/shi-gg/linkdave:0.1.2
-        container_name: music-linkdave
+        container_name: radio-linkdave
         restart: unless-stopped
         ports:
             - "18080:8080"
