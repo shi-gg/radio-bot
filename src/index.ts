@@ -1,4 +1,4 @@
-import { Client, Events, GatewayIntentBits, Options } from "discord.js";
+import { Client, Events, GatewayIntentBits, Options, ActivityType } from "discord.js";
 import { EventName, LinkDaveClient } from "linkdave";
 import { inspect } from "node:util";
 import z from "zod";
@@ -60,8 +60,14 @@ const linkdave = new LinkDaveClient({
 
 discord.on(Events.Raw, (packet) => linkdave.handleRaw(packet));
 
-discord.on(Events.ClientReady, async () => {
-    log("Bot ready as", discord.user?.tag);
+discord.on(Events.ClientReady, async (client) => {
+    log("Bot ready as", client.user.tag);
+
+    client.user.setActivity({
+        type: ActivityType.Custom,
+        name: "Custom Status", 
+        state: "#0 • wamellow.com" 
+    });
 
     await linkdave.connectAll();
     const player = linkdave.getPlayer(env.GUILD_ID);
