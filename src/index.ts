@@ -1,4 +1,4 @@
-import { Client, Events, GatewayIntentBits, Options } from "discord.js";
+import { Client, Events, GatewayIntentBits, Options, ActivityType } from "discord.js";
 import { EventName, LinkDaveClient } from "linkdave";
 import { inspect } from "node:util";
 import z from "zod";
@@ -62,6 +62,17 @@ discord.on(Events.Raw, (packet) => linkdave.handleRaw(packet));
 
 discord.on(Events.ClientReady, async () => {
     log("Bot ready as", discord.user?.tag);
+
+    discord.user?.setPresence({
+        status: "online",
+        activities: [
+            {
+                type: ActivityType.Custom,
+                name: "Custom Status",
+                state: "• wamellow.com"
+            }
+        ]
+    });
 
     await linkdave.connectAll();
     const player = linkdave.getPlayer(env.GUILD_ID);
