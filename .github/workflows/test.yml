@@ -1,0 +1,23 @@
+name: test
+
+on:
+    pull_request:
+        branches: [ main ]
+
+jobs:
+    tests:
+        name: Tests
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v6
+            - uses: oven-sh/setup-bun@v2
+
+            - name: Install packages
+              run: bun install --legacy-peer-deps
+
+            - name: Compile source
+              run: bunx tsgo
+
+            - name: Run linters
+              run: bunx eslint . --no-fix
