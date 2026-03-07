@@ -1,4 +1,4 @@
-import { Client, Events, GatewayIntentBits, Options, ActivityType } from "discord.js";
+import { ActivityType, Client, Events, GatewayIntentBits, Options } from "discord.js";
 import { EventName, LinkDaveClient } from "linkdave";
 import { inspect } from "node:util";
 import z from "zod";
@@ -65,8 +65,8 @@ discord.on(Events.ClientReady, async (client) => {
 
     client.user.setActivity({
         type: ActivityType.Custom,
-        name: "Custom Status", 
-        state: "#0 • wamellow.com" 
+        name: "Custom Status",
+        state: "#0 • wamellow.com"
     });
 
     await linkdave.connectAll();
