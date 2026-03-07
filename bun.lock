@@ -6,12 +6,12 @@
       "dependencies": {
         "@mwlica/eslint": "^1.2.0",
         "discord.js": "^14.25.1",
-        "linkdave": "^0.1.2",
+        "linkdave": "^0.1.4",
         "zod": "^4.3.6",
       },
       "devDependencies": {
         "@types/bun": "^1.3.10",
-        "@types/node": "^25.3.3",
+        "@types/node": "^25.3.5",
         "@typescript/native-preview": "^7.0.0-dev.20260307.1",
         "typescript-eslint": "^8.56.1",
       },
@@ -290,7 +290,7 @@
 
     "levn": ["levn@0.4.1", "", { "dependencies": { "prelude-ls": "^1.2.1", "type-check": "~0.4.0" } }, "sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ=="],
 
-    "linkdave": ["linkdave@0.1.2", "", { "dependencies": { "discord-api-types": "^0.38.40" } }, "sha512-ReZWxyrBE+IWCONM3wcPrfStMseYcNMselI+XqllPHwhbFl9KP8MyftenkBS6WHKvA0+yCzQG6GuvMtGpI3mZw=="],
+    "linkdave": ["linkdave@0.1.4", "", { "dependencies": { "discord-api-types": "^0.38.40" } }, "sha512-410J0m0bLOtqlEqwkaDfCtP/jEqS2rnnSSdBXM1wpV22OvDrrxuy+80dhaxwgBJ2xifNeY2Hzu7em0Ka+DmAVg=="],
 
     "locate-path": ["locate-path@6.0.0", "", { "dependencies": { "p-locate": "^5.0.0" } }, "sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw=="],
 
