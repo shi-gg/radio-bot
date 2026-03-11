@@ -49,7 +49,7 @@ The easiest way to deploy the bot is using Docker Compose. This will start both 
             depends_on:
                 - linkdave
         linkdave:
-            image: ghcr.io/shi-gg/linkdave:0.1.2
+            image: ghcr.io/shi-gg/linkdave:latest
             container_name: radio-linkdave
             restart: unless-stopped
             ports:
